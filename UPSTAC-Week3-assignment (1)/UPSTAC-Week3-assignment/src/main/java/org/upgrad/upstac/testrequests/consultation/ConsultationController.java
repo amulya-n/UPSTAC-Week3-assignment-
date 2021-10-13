@@ -100,6 +100,7 @@ public class ConsultationController {
             //throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
             User user = userLoggedInService.getLoggedInUser();
             TestRequest result = testRequestUpdateService.assignForConsultation(id, user);
+            return result;
         }catch (AppException e) {
             throw asBadRequest(e.getMessage());
         }
